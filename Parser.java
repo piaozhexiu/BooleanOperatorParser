@@ -70,7 +70,7 @@ public class Parser {
                 continue;
             }
             List<String> secondHalf = sublist(expr, index + 1, expr.size());
-            if (firstHalf.size() == 0) {
+            if (secondHalf.size() == 0) {
                 continue;
             }
             if (isValidExpr(firstHalf) && isValidExpr(secondHalf)) {
