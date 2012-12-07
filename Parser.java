@@ -118,15 +118,15 @@ public class Parser {
     // evaluate expression
 
     private static boolean isAndExpr(String expr) {
-    	return expr.indexOf("&&") != -1;
+        return expr.indexOf("&&") != -1;
     }
 
     private static boolean isOrExpr(String expr) {
-    	return expr.indexOf("||") != -1;
+        return expr.indexOf("||") != -1;
     }
 
     private static boolean isNotExpr(String expr) {
-    	return expr.indexOf("!") != -1;
+        return expr.indexOf("!") != -1;
     }
 
     private static boolean evalAlias(String expr) {
@@ -134,14 +134,14 @@ public class Parser {
     }
 
     private static boolean evalAndExpr(String expr) {
-    	int index = expr.indexOf("&&");
+        int index = expr.indexOf("&&");
         String firstHalf = expr.substring(0, index);
         String secondHalf = expr.substring(index + 2);
         return evalExpr(firstHalf) && evalExpr(secondHalf);
     }
 
     private static boolean evalOrExpr(String expr) {
-    	int index = expr.indexOf("||");
+        int index = expr.indexOf("||");
         String firstHalf = expr.substring(0, index);
         String secondHalf = expr.substring(index + 2);
         return evalExpr(firstHalf) || evalExpr(secondHalf);
@@ -152,21 +152,21 @@ public class Parser {
     }
 
     private static boolean evalExpr(String expr) {
-    	if (isAndExpr(expr)) {
-    		return evalAndExpr(expr);
-    	} else if (isOrExpr(expr)) {
-    		return evalOrExpr(expr);
-    	} else if (isNotExpr(expr)) {
-    		return evalNotExpr(expr);
-    	} else {
-    		return evalAlias(expr);
-    	}
+        if (isAndExpr(expr)) {
+            return evalAndExpr(expr);
+        } else if (isOrExpr(expr)) {
+            return evalOrExpr(expr);
+        } else if (isNotExpr(expr)) {
+            return evalNotExpr(expr);
+        } else {
+            return evalAlias(expr);
+        }
     }
 
     // public API
 
     public String toString() {
-    	return expr.toString();
+        return expr.toString();
     }
 
     public void parse(String expr) {
@@ -184,7 +184,7 @@ public class Parser {
         }
         StringBuffer sb = new StringBuffer();
         for (String s : expr) {
-        	sb.append(s);
+            sb.append(s);
         }
         return evalExpr(sb.toString());
     }
