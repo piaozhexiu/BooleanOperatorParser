@@ -218,9 +218,9 @@ public class Parser {
                 "[not][and]",
                 "[not][not][and]",
                 "[not][and][and][and]",
+                "[not][and][and][not][and]",
                 "[not][and][or][and]",
                 "[not][and][or][not][and]",
-                "[not][and][and][not][and]",
                 "[not][not][and][and][and]",
                 "[not][not][and][or][and]"
         };
